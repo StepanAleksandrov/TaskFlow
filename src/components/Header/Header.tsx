@@ -1,20 +1,21 @@
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
   return (
-    <nav>
-      <ul>
-        <li>
+    <header>
+      <div className="header">
+        <div className="logo">TaskFlow</div>
+
+        <nav className="navigation" aria-label="Main navigation">
           <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-        </li>
-        <li>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/dashboard">
+            Dashboard
+          </NavLink>
           <NavLink to="/login">Login</NavLink>
-        </li>
-      </ul>
-    </nav>
+        </nav>
+      </div>
+    </header>
   );
 };
 
